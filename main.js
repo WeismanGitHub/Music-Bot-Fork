@@ -1,6 +1,8 @@
 const { Client, GatewayIntentBits } = require('discord.js');
 const { Player } = require('discord-player');
+const express = require('express');
 require("dotenv").config()
+
 
 global.client = new Client({
     intents: [
@@ -10,8 +12,14 @@ global.client = new Client({
         GatewayIntentBits.GuildVoiceStates,
         GatewayIntentBits.MessageContent
     ],
-   disableMentions: 'everyone',
+    disableMentions: 'everyone',
 });
+
+const app = express()
+const port = process.env.PORT || 5000
+// The reason for making it a web app is because Replit requires it.
+app.get('/', (req, res) => res.send('online...'));
+app.listen(port, () => console.log(`server is starting on port ${port}...`));
 
 client.config = require('./config');
 
