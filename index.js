@@ -3,7 +3,6 @@ const { Player } = require('discord-player');
 const express = require('express');
 require("dotenv").config()
 
-
 global.client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
