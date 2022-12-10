@@ -1,9 +1,8 @@
 module.exports = {
     app: {
-        token: 'XXX',
-        playing: 'by Zerio ❤️',
+        token: process.env.TOKEN,
+        playing: 'Grieving Groovy',
         global: true,
-        guild: 'XXX'
     },
 
     opt: {
